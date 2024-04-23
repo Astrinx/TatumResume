@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TatumResume</title>
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Trebuchet MS, Tahoma, sans-serif;
+  color: #ebebeb;
+  background-color: #191921;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+}
+
+.top {
+  background-color: black;
+  border-bottom: solid 2px white;
+  padding: 20px;
+  text-align: center;
+}
+
+.top h1, .top h2 {
+  margin: 10px 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  padding: 20px;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.main h2 {
+  margin-top: 20px;
+}
+
+.main p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.dropdown {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ddd;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #b05353;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="top1">
+      <h1>Resume for a Date with Tatum</h1>
+      <h2>Objective</h2>
+      <p> To create memorable moments filled with laughter, genuine connection, and shared interests with an exceptional individual like Tatum </p>
+    </div>
+  </div>
+  <div class="body">
+    <div class="side"></div>
+    <div class="main" id="personal">
+      <h2>Personal Information:</h2>
+      <p> - <strong>Team Charlie Enthusiast:</strong> Fully dedicated and committed to the ideals of Team Charlie.<br>
+        - <strong>Height:</strong> 6’3”<br>
+        - <strong>Tattoo:</strong> One small sun tattoo on my leg, symbolizing warmth and positivity.<br>
+        - <strong>Scent:</strong> Consistently smelling nice, because presentation matters.<br>
+        - <strong>Hug Expertise:</strong> Known for giving great hugs that convey comfort and affection.<br>
+        - <strong>Sleeping Arrangements:</strong> Proud owner of a king-size bed with a TV for cozy movie nights.</p>
+    </div>
+
+    <div class="main" id="interests">
+      <h2>Interests:</h2>
+      <p> - <strong>Music Taste:</strong> Top artist of 2023 was Zach Bryan, closely followed by Taylor Swift, showing a diverse appreciation for music.<br>
+        - <strong>Hobbies:</strong> Passionate about computers, golf, F1, and football, making for engaging conversations and shared experiences.<br>
+        - <strong>Artistic Flair:</strong> Recently explored my artistic side by painting a 6x5 canvas entirely black, demonstrating creativity and expression.</p>
+    </div>
+
+    <div class="main" id="occupation">
+      <h2>Occupation:</h2>
+      <p> - <strong>Current Role:</strong> Computer Science Student and Part-Time Bartender, showcasing a balance of intellect and social skills.<br>
+        - <strong>Strong Work Ethic:</strong> Capable of managing both academic pursuits and professional responsibilities with dedication and efficiency.</p>
+    </div>
+
+    <div class="main" id="qualities">
+      <h2>Additional Qualities:</h2>
+      <p> - <strong>"Can" Attitude:</strong> Approach challenges with a positive and proactive mindset, always eager to find solutions.<br>
+        - <strong>Genuine and Respectful:</strong> Committed to treating others with kindness, empathy, and respect.</p>
+    </div>
+
+    <div class="main" id="final">
+      <h2>Final Thoughts:</h2>
+      <p>With a combination of diverse interests, genuine personality, and a touch of artistic flair, I am excited about the opportunity to create unforgettable moments with [Girl's Name]. Let's embark on an adventure filled with laughter, shared passions, and meaningful connections.</p>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Navigate Sections</button>
+      <div class="dropdown-content">
+        <a href="#personal">Personal Information</a>
+        <a href="#interests">Interests</a>
+        <a href="#occupation">Occupation</a>
+        <a href="#qualities">Additional Qualities</a>
+        <a href="#final">Final Thoughts</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.dropdown-content a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = anchor.getAttribute('href').substring(1);
+        document.querySelectorAll('.main').forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
