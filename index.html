@@ -112,6 +112,29 @@ body {
     </div>
   </div>
   <div class="body">
+    <div class="dropdown">
+        <button class="dropbtn">Navigate Sections</button>
+        <div class="dropdown-content">
+          <a href="#personal">Personal Information</a>
+          <a href="#interests">Interests</a>
+          <a href="#occupation">Occupation</a>
+          <a href="#qualities">Additional Qualities</a>
+          <a href="#final">Final Thoughts</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.dropdown-content a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const sectionId = anchor.getAttribute('href').substring(1);
+          document.querySelectorAll('.main').forEach(section => {
+            section.classList.remove('active');
+          });
+          document.getElementById(sectionId).classList.add('active');
+        });
+      });
+    </script>
     <div class="side"></div>
     <div class="main" id="personal">
       <h2>Personal Information:</h2>
@@ -146,28 +169,6 @@ body {
       <h2>Final Thoughts:</h2>
       <p>With a combination of diverse interests, genuine personality, and a touch of artistic flair, I am excited about the opportunity to create unforgettable moments with [Girl's Name]. Let's embark on an adventure filled with laughter, shared passions, and meaningful connections.</p>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Navigate Sections</button>
-      <div class="dropdown-content">
-        <a href="#personal">Personal Information</a>
-        <a href="#interests">Interests</a>
-        <a href="#occupation">Occupation</a>
-        <a href="#qualities">Additional Qualities</a>
-        <a href="#final">Final Thoughts</a>
-      </div>
-    </div>
-  </div>
-  <script>
-    document.querySelectorAll('.dropdown-content a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const sectionId = anchor.getAttribute('href').substring(1);
-        document.querySelectorAll('.main').forEach(section => {
-          section.classList.remove('active');
-        });
-        document.getElementById(sectionId).classList.add('active');
-      });
-    });
-  </script>
+    
 </body>
 </html>
